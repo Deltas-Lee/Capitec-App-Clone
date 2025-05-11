@@ -1,10 +1,13 @@
+import 'package:capitec_app_clone/components/bottom_nav_items.dart';
 import 'package:capitec_app_clone/screens/auth/forgot_pin.dart';
 import 'package:flutter/material.dart';
 
-import '../screens/dashboard/my_dashboard.dart';
-
 /// Helper method to build a card
-Widget buildCard(BuildContext dialogContext, IconData icon, String text) {
+Widget buildFavouriteCard(
+  BuildContext dialogContext,
+  IconData icon,
+  String text,
+) {
   return GestureDetector(
     onTap: () {
       showDialog(
@@ -80,10 +83,11 @@ Widget buildCard(BuildContext dialogContext, IconData icon, String text) {
                     const SizedBox(width: 25.0),
                     GestureDetector(
                       onTap: () {
+                        Navigator.of(dialogContext).pop();
                         Navigator.push(
                           dialogContext,
                           MaterialPageRoute(
-                            builder: (context) => const MyDashboard(),
+                            builder: (context) => const BottomNavItems(),
                           ),
                         );
                       },

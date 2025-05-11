@@ -1,5 +1,5 @@
-import 'package:capitec_app_clone/components/half_circle_painter.dart';
-import 'package:capitec_app_clone/helper/build_card.dart';
+import 'package:capitec_app_clone/components/straight_lines_painter.dart';
+import 'package:capitec_app_clone/helper/build_favourite_card.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../auth/sign_in.dart';
@@ -17,6 +17,8 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        resizeToAvoidBottomInset:
+            false, // Prevents the keyboard from pushing (bottom container) the content up
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
         body: Column(
           children: [
@@ -100,18 +102,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisSpacing: 4.0,
                 physics: NeverScrollableScrollPhysics(),
                 children: [
-                  buildCard(context, Icons.people_outline, 'Pay beneficiary'),
-                  buildCard(
+                  buildFavouriteCard(
+                    context,
+                    Icons.people_outline,
+                    'Pay beneficiary',
+                  ),
+                  buildFavouriteCard(
                     context,
                     Icons.emoji_objects_outlined,
                     'Buy electricity',
                   ),
-                  buildCard(
+                  buildFavouriteCard(
                     context,
                     Icons.sim_card_outlined,
                     'Capitec connect',
                   ),
-                  buildCard(context, Icons.paypal_rounded, 'PayPal'),
+                  buildFavouriteCard(context, Icons.paypal_rounded, 'PayPal'),
                 ],
               ),
             ),
@@ -167,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     right: 0,
                     child: CustomPaint(
                       size: const Size(double.infinity, 100),
-                      painter: HalfCirclePainter(),
+                      painter: StraightLinesPainter(),
                     ),
                   ),
                   Positioned(
@@ -181,8 +187,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             builder: (context) => const QrScannerScreen(),
                           ),
                         );
+                        if (!mounted) return;
                         if (result != null) {
-                          if (!mounted) return;
                           ScaffoldMessenger.of(context).showSnackBar(
                             SnackBar(content: Text('Scanned code: $result')),
                           );

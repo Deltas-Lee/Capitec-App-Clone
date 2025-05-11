@@ -1,4 +1,4 @@
-import 'package:capitec_app_clone/screens/dashboard/my_dashboard.dart';
+import 'package:capitec_app_clone/components/bottom_nav_items.dart';
 import 'package:capitec_app_clone/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class UserProfileScreen extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MyDashboard(),
+                          builder: (context) => const BottomNavItems(),
                         ),
                       ),
                     },

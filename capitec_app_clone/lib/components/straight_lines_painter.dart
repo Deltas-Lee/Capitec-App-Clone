@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// Custom painter for the straight lines
-class HalfCirclePainter extends CustomPainter {
+class StraightLinesPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint =
