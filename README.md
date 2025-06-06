@@ -45,16 +45,6 @@ A Flutter-based mobile application that replicates the functionality and design 
 * mobile_scanner: ^7.0.0 - For QR code scanning.
 * cupertino_icons: ^1.0.8 - iOS-style icons.
 
-### 📂 Project Structure
-lib/
-├── main.dart                # Entry point of the app
-├── screens/
-│   ├── auth/
-│   │   ├── sign_in.dart     # Sign-in screen
-│   │   ├── forgot_pin.dart  # Forgot PIN screen
-│   ├── dashboard/
-│       ├── my_dashboard.dart # Dashboard screen
-
 ### 🖼️ Screenshots
 -- TBA
 
@@ -78,7 +68,7 @@ Contributions are welcome! Please follow these steps:
 - This project is licensed under the MIT License. See the LICENSE file for details.
 
 6. ### 📧 Contact
-   - # Email: deltaslep@gmail.com
-   - # Github: https://github.com/Deltas-Lee
+   - Email: deltaslep@gmail.com
+   - Github: https://github.com/Deltas-Lee
 
  
