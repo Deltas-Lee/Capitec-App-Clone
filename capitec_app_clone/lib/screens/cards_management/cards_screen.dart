@@ -10,20 +10,26 @@ class CardsScreen extends StatelessWidget {
         title: const Text('Explore Menu'),
         backgroundColor: Colors.blue[600],
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text('Explore Menu', style: TextStyle(fontSize: 24)),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Handle button press
-              },
-              child: const Text('Explore More'),
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16.0),
+            child: Center(
+              child: Image.asset(
+                'lib/assets/images/capitec_card.jpeg',
+                height: 350,
+              ),
             ),
-          ],
-        ),
+          ),
+          Text(
+            'Show Card Details',
+            style: TextStyle(
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+        ],
       ),
     );
   }

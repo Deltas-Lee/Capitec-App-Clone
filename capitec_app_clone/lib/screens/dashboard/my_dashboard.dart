@@ -127,13 +127,17 @@ class MyDashboard extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 16),
-              const Text(
-                'Live Better',
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.indigo,
-                ),
+              Row(
+                children: [
+                  const Text(
+                    'Live Better',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.indigo,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(height: 8),
 

@@ -1,3 +1,4 @@
+import 'package:capitec_app_clone/components/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 
 class MessagesScreen extends StatelessWidget {
@@ -7,20 +8,52 @@ class MessagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Explore Menu'),
+        titleTextStyle: TextStyle(
+          fontSize: 20,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        automaticallyImplyLeading: false,
+        title: const Text('Messages'),
         backgroundColor: Colors.blue[600],
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings, size: 40.0, color: Colors.white),
+            onPressed: () {
+              // Handle notification icon press
+            },
+          ),
+        ],
       ),
-      body: Center(
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text('Explore Menu', style: TextStyle(fontSize: 24)),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Handle button press
-              },
-              child: const Text('Explore More'),
+            Text(
+              'May 2025',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.bold,
+                color: Colors.indigo[900],
+              ),
+            ),
+            const SizedBox(height: 8),
+            Expanded(
+              child: ListView.separated(
+                itemCount: 10,
+                separatorBuilder:
+                    (context, index) =>
+                        Divider(color: Colors.grey[300], thickness: 1),
+                itemBuilder: (context, index) {
+                  return CustomListTile(
+                    title:
+                        'Capitec: Payment R16000.00 from MAIN ACCOUNT; Ref: Client',
+                    onTap: () {},
+                  );
+                },
+              ),
             ),
           ],
         ),

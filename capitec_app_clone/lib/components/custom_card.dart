@@ -6,6 +6,8 @@ class CustomCard extends StatelessWidget {
   final IconData icon;
   final Color? color;
   final Color? iconColor;
+  final IconData? trailingIcon;
+ 
   final VoidCallback onTap;
 
   const CustomCard({
@@ -16,6 +18,7 @@ class CustomCard extends StatelessWidget {
     required this.onTap,
     this.iconColor,
     this.subtitle,
+    this.trailingIcon,
   });
 
   @override
@@ -27,8 +30,8 @@ class CustomCard extends StatelessWidget {
         child: Row(
           children: [
             Container(
-              width: 80,
-              height: 90,
+              width: 60,
+              height: 80,
               decoration: BoxDecoration(
                 color: color ?? Colors.white,
                 borderRadius: BorderRadius.only(
@@ -41,7 +44,7 @@ class CustomCard extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                height: 90,
+                height: 80,
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 alignment: Alignment.centerLeft,
                 color: Colors.white,
@@ -69,6 +72,12 @@ class CustomCard extends StatelessWidget {
                 ),
               ),
             ),
+            if (trailingIcon != null)
+              Container(
+                height: 80,
+                color: Colors.white,
+                child: Icon(trailingIcon, color: Colors.blue, size: 18),
+              ),
           ],
         ),
       ),
