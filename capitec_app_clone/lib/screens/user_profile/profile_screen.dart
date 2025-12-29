@@ -15,7 +15,7 @@ class UserProfileScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text(
-                'Hello SmartMzansi Tech',
+                'Hello Mzansi WebApps',
                 style: TextStyle(
                   color: Colors.indigo[900],
                   fontWeight: FontWeight.bold,

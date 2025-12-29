@@ -6,6 +6,9 @@ class CustomListTile extends StatelessWidget {
   final String? subtitle;
   final Color? color;
   final VoidCallback onTap;
+  final String? trailing;
+  final bool customTrailing;
+  final Color? trailingColor;
 
   const CustomListTile({
     super.key,
@@ -14,6 +17,9 @@ class CustomListTile extends StatelessWidget {
     this.color,
     required this.onTap,
     this.subtitle,
+    this.trailing,
+    this.customTrailing = false,
+    this.trailingColor,
   });
 
   @override
@@ -32,7 +38,17 @@ class CustomListTile extends StatelessWidget {
               )
               : null,
       onTap: onTap,
-      trailing: const Icon(Icons.arrow_forward_ios, size: 20),
+      trailing:
+          customTrailing
+              ? Text(
+                trailing ?? '',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: trailingColor ?? Colors.blue,
+                ),
+              )
+              : const Icon(Icons.arrow_forward_ios, size: 20),
     );
   }
 }

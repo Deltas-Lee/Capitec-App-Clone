@@ -1,11 +1,11 @@
 import 'package:capitec_app_clone/components/custom_card.dart';
 import 'package:capitec_app_clone/helper/build_favourite_card.dart';
+import 'package:capitec_app_clone/screens/cards_management/main_account_screen.dart';
 import 'package:capitec_app_clone/screens/user_profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 
 class MyDashboard extends StatelessWidget {
   const MyDashboard({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -89,7 +89,12 @@ class MyDashboard extends StatelessWidget {
                 icon: Icons.account_balance_outlined,
                 color: Colors.blue[600],
                 onTap: () {
-                  // Handle tile tap
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MainAccountScreen(),
+                    ),
+                  );
                 },
               ),
               CustomCard(

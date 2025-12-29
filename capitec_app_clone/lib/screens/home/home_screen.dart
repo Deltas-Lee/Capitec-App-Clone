@@ -89,7 +89,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             const SizedBox(height: 20),
-            const Text('SmartMzansi Tech', style: TextStyle(fontSize: 22)),
+            const Text('Mzansi WebApps', style: TextStyle(fontSize: 22)),
             const SizedBox(height: 18),
 
             Expanded(
