@@ -7,13 +7,10 @@ class BalanceInfoSheet extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isAvailable = type.toLowerCase() == 'available';
-    final title = isAvailable ? 'Available Balance' : 'Account Balance';
-    final amount = isAvailable ? 'R118000.00' : 'R120000.50';
+    final title = 'Available Balance';
+    final amount = 'R118000.00';
     final description =
-        isAvailable
-            ? 'This is the amount of money available in your account that you can spend. It may be less than your total balance due to pending transactions, holds, or reserved funds.'
-            : 'This is the total amount of money in your account, including any pending deposits or transactions.';
+        'This is the amount of money available in your account that you can spend. It may be less than your total balance due to pending transactions, holds, or reserved funds.';
 
     return Container(
       decoration: const BoxDecoration(
@@ -137,9 +134,7 @@ class BalanceInfoSheet extends StatelessWidget {
                     const SizedBox(width: 12),
                     Expanded(
                       child: Text(
-                        isAvailable
-                            ? 'The available balance updates in real-time with your transactions.'
-                            : 'The account balance includes all credits and debits up to the last transaction.',
+                        'The available balance updates in real-time with your transactions.',
                         style: TextStyle(
                           fontSize: 13,
                           color: Colors.amber[900],

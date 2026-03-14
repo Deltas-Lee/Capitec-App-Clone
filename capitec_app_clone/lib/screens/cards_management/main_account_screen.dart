@@ -91,15 +91,16 @@ class _MainAccountScreenState extends State<MainAccountScreen> {
           backgroundColor: Colors.blue[600],
           elevation: 0,
           automaticallyImplyLeading: true,
+          centerTitle: true,
+          iconTheme: const IconThemeData(color: Colors.white),
         ),
         body: Column(
           children: [
-            // Balance and Available Box
+             // Available Balance Box
             Container(
               color: Colors.blue[600],
               padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+              child: Column(
                 children: [
                   GestureDetector(
                     onTap: () {
@@ -117,68 +118,63 @@ class _MainAccountScreenState extends State<MainAccountScreen> {
                                 const BalanceInfoSheet(type: 'available'),
                       );
                     },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Available',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+                    child: Container(
+                      width: double.infinity,
+                      padding: const EdgeInsets.only(left: 16, right: 16),
+                      decoration: BoxDecoration(
+                        color: Colors.white10,
+                        border: Border.all(color: Colors.white30, width: 1),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Available',
+                              style: TextStyle(
+                                color: Colors.white70,
+                                fontSize: 14,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            Text(
+                              'R118000.00',
+                              style: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'R118000.00',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
-                  Container(width: 1, height: 60, color: Colors.white30),
-                  GestureDetector(
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        isScrollControlled: true,
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                          ),
+                  const SizedBox(height: 16),
+                  // Balance Info
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Balance',
+                        style: TextStyle(
+                          color: Colors.white70,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
                         ),
-                        builder:
-                            (context) =>
-                                const BalanceInfoSheet(type: 'balance'),
-                      );
-                    },
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Balance',
-                          style: TextStyle(
-                            color: Colors.white70,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                          ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'R120000.50',
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
-                        const SizedBox(height: 4),
-                        Text(
-                          'R120000.50',
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 22,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
